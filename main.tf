@@ -22,11 +22,17 @@ resource "azapi_resource" "symbolicname1" {
   })
 }
 
+resource "azurerm_resource_group" "purview_test_02" {
+  name     = "purview_test_02"
+  location = "East US"
+}
+
+
 resource "azapi_resource" "symbolicname2" {
   type = "Microsoft.Purview/accounts@2021-07-01"
   name = "harishperview02"
   location = "East US"
-  parent_id = azurerm_resource_group.purview_test_01.id
+  parent_id = azurerm_resource_group.purview_test_02.id
   
   identity {
     type = "SystemAssigned"

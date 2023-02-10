@@ -3,6 +3,7 @@ resource "azurerm_resource_group" "purview_test_01" {
   location = "East US"
 }
 
+
 resource "azapi_resource" "symbolicname1" {
   type = "Microsoft.Purview/accounts@2021-07-01"
   name = "harishperview01"

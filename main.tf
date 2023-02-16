@@ -46,3 +46,22 @@ resource "azapi_resource" "symbolicname2" {
     }
   })
 }
+
+resource "azapi_resource" "symbolicname3" {
+  type = "Microsoft.Purview/accounts@2021-07-01"
+  name = "harishperview03"
+  location = "East US 2"
+  parent_id = azurerm_resource_group.purview_test_023.id
+  
+  identity {
+    type = "SystemAssigned"
+    #identity_ids = ["SystemAssigned"]
+  }
+  body = jsonencode({
+    properties = {
+      cloudConnectors = {}
+      managedResourceGroupName = "purview_test_1111"
+      publicNetworkAccess = "Enabled"
+    }
+  })
+}

@@ -50,7 +50,7 @@ resource "azapi_resource" "symbolicname2" {
 resource "azapi_resource" "symbolicname3" {
   type = "Microsoft.Purview/accounts@2021-07-01"
   name = "harishperview03"
-  location = "East US 2"
+  location = "Canada Central"
   parent_id = azurerm_resource_group.purview_test_023.id
   
   identity {
